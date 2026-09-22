@@ -27,7 +27,7 @@ cidades = st.sidebar.multiselect("Cidade:", options = sorted(df["city"].unique()
 
 mes = st.sidebar.multiselect("Mês:", options = sorted(df["Month"].unique()),default = sorted(df["Month"].unique()))
                         
-ano = st.sidebar.multiselect("Ano:", options = sorted(df["Year"].unique()), default = sorted(df["Year"][0]))
+ano = st.sidebar.multiselect("Ano:", options = sorted(df["Year"].unique()), default = (df["Year"][0]))
              
 # Removi o que não parece ser relevante no momento
 colunas_variaveis = [col for col in df.columns if col not in ["city", "Year", "date", "state", "latitude", "longitude", "elevation_m", "Month", "Month_name"]]
