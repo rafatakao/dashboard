@@ -23,11 +23,11 @@ st.sidebar.header("Selecione a(s) Cidade(s) e o Período:")
 
 
 #box side bars
-cidades = st.sidebar.multiselect("Cidade:", options = sorted(df["city"].unique()), default = sorted(df["city"].unique()))
+cidades = st.sidebar.multiselect("Cidade:", options = sorted(df["city"].unique()), default = (df["city"][0]))
 
 mes = st.sidebar.multiselect("Mês:", options = sorted(df["Month"].unique()),default = sorted(df["Month"].unique()))
                         
-ano = st.sidebar.multiselect("Ano:", options = sorted(df["Year"].unique()), default = sorted(df["Year"].unique()))
+ano = st.sidebar.multiselect("Ano:", options = sorted(df["Year"].unique()), default = sorted(df["Year"][0]))
              
 # Removi o que não parece ser relevante no momento
 colunas_variaveis = [col for col in df.columns if col not in ["city", "Year", "date", "state", "latitude", "longitude", "elevation_m", "Month", "Month_name"]]
